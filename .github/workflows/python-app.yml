@@ -24,7 +24,7 @@ jobs:
         pip install pyinstaller click nornir nornir-utils nornir-jinja2 nornir-netmiko netmiko nornir-scrapli scrapli scrapli-netconf scrapli-community nornir-napalm ttp nornir-netbox nornir-pyez nornir-f5 nornir-paramiko nornir-http nornir-pyxl nornir-netconf nornir-routeros tqdm  
 
     - name: Run PyInstaller
-      run: pyinstaller --onefile nornir_cli.py # 将 your_script_name.py 替换为您的脚本名称
+      run: pyinstaller --onefile --collect-all nornir_cli nornir_cli.py # 将 your_script_name.py 替换为您的脚本名称
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
